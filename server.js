@@ -5,8 +5,10 @@ var express = require('express')
 ,app = express();
 // app.set('view engine', 'html');
 
+app.use(express.static(__dirname));
+
 app.get('/', function(req, res) {
-	res.sendfile('BTG-Holding-Page.jpg', {root: __dirname});
+	res.sendfile('index.html', {root: __dirname});
 });
 
 var server = app.listen(process.env.PORT || 5000);
